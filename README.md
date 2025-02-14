@@ -9,6 +9,37 @@ http://localhost:5000/api
 
 ## Authentication
 Currently, no authentication is required.
+ 
+# Environment Variables Documentation (.env)
+
+## Database Configuration
+
+### Required Variables
+
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `DB_HOST` | Database server hostname | - | `localhost` |
+| `DB_PORT` | Database server port | `3306` | `3306` |
+| `DB_USER` | Database username | - | `root` |
+| `DB_PASSWORD` | Database password | - | `12345` |
+| `DB_NAME` | Database name | - | `properties_db` |
+
+### Optional Variables
+
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `TABLE_NAME` | Name of the embeddings table | `embeddings` | `embeddings` |
+| `BATCH_SIZE` | Batch size for processing embeddings | `32` | `32` |
+
+## Commented Variables (Currently Inactive)
+
+These variables are commented out in the current configuration but can be uncommented and configured as needed:
+
+```plaintext
+# CSV_PATH - Path to the dataset CSV file
+# SEARCH_QUERY - Default search query for testing
+# SEARCH_K - Default number of results to return
+```
 
 ## Endpoints
 

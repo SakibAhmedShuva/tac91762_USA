@@ -121,7 +121,100 @@ Get list of available TTS voices.
 }
 ```
 
-### 6. Speech-to-Text Conversion
+I'll add the missing TTS endpoints to your API documentation. Here are the additional endpoints:
+
+### 6. Save Speech File
+```http
+POST /tts/save
+```
+Convert text to speech and save as an audio file.
+
+**Request Body:**
+```json
+{
+    "text": "Text to convert to speech",
+    "voice": "female_1",
+    "language": "en-US",
+    "format": "wav"
+}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "file_path": "/path/to/saved/audio.wav",
+    "duration": 2.5,
+    "format": "wav"
+}
+```
+
+### 8. Stream Speech Audio
+```http
+POST /tts/stream
+```
+Stream audio directly to the client.
+
+**Request Body:**
+```json
+{
+    "text": "Text to convert to speech",
+    "voice": "female_1",
+    "language": "en-US"
+}
+```
+
+**Response:**
+- Content-Type: audio/wav
+- Streams audio data directly to client
+
+### 10. Download Audio File
+```http
+GET /tts/download/<task_id>
+```
+Download the generated audio file for a completed TTS task.
+
+**Parameters:**
+- `task_id` (path, required): The ID of the completed TTS task
+
+**Response:**
+- Content-Type: audio/wav
+- Downloads the audio file
+
+These endpoints complete your TTS functionality with options for:
+- Saving audio files
+- Streaming audio directly
+- Downloading generated audio files
+
+The implementation includes error handling and supports various audio formats. The streaming endpoint is particularly useful for real-time applications where immediate audio playback is needed.
+
+Example usage with curl:
+
+```bash
+# Save audio file
+curl -X POST http://localhost:5000/api/tts/save \
+  -H "Content-Type: application/json" \
+  -d '{"text":"Hello world","voice":"female_1","format":"wav"}'
+
+# Stream audio
+curl -X POST http://localhost:5000/api/tts/stream \
+  -H "Content-Type: application/json" \
+  -d '{"text":"Hello world","voice":"female_1"}' \
+  --output output.wav
+
+# Download audio file
+curl -X GET http://localhost:5000/api/tts/download/task123 \
+  --output downloaded_audio.wav
+```
+
+Error Handling:
+- 400: Invalid parameters or missing data
+- 404: Audio file not found
+- 500: Server processing error
+
+The streaming endpoint uses chunked transfer encoding to deliver audio data as it's generated, making it suitable for real-time applications.
+
+### 8. Speech-to-Text Conversion
 ```http
 POST /stt/convert
 ```
@@ -138,7 +231,7 @@ Convert audio to text.
 }
 ```
 
-### 7. Health Check
+### 9. Health Check
 ```http
 GET /health
 ```

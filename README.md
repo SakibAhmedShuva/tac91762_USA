@@ -102,28 +102,7 @@ Check the status of a TTS conversion task.
 }
 ```
 
-### 5. Get Available Voices
-```http
-GET /tts/voices
-```
-Get list of available TTS voices.
-
-**Response:**
-```json
-{
-    "voices": [
-        {
-            "id": "female_1",
-            "name": "Female Voice 1",
-            "language": "en-US"
-        }
-    ]
-}
-```
-
-I'll add the missing TTS endpoints to your API documentation. Here are the additional endpoints:
-
-### 6. Save Speech File
+### 5. Save Speech File
 ```http
 POST /tts/save
 ```
@@ -148,8 +127,26 @@ Convert text to speech and save as an audio file.
     "format": "wav"
 }
 ```
+### 6. Get Available Voices
+```http
+GET /tts/voices
+```
+Get list of available TTS voices.
 
-### 8. Stream Speech Audio
+**Response:**
+```json
+{
+    "voices": [
+        {
+            "id": "female_1",
+            "name": "Female Voice 1",
+            "language": "en-US"
+        }
+    ]
+}
+```
+
+### 7. Stream Speech Audio
 ```http
 POST /tts/stream
 ```
@@ -168,7 +165,7 @@ Stream audio directly to the client.
 - Content-Type: audio/wav
 - Streams audio data directly to client
 
-### 10. Download Audio File
+### 8. Download Audio File
 ```http
 GET /tts/download/<task_id>
 ```
@@ -214,7 +211,7 @@ Error Handling:
 
 The streaming endpoint uses chunked transfer encoding to deliver audio data as it's generated, making it suitable for real-time applications.
 
-### 8. Speech-to-Text Conversion
+### 9. Speech-to-Text Conversion
 ```http
 POST /stt/convert
 ```
@@ -231,7 +228,7 @@ Convert audio to text.
 }
 ```
 
-### 9. Health Check
+### 10. Health Check
 ```http
 GET /health
 ```

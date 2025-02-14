@@ -1,0 +1,50 @@
+pip install transformers==4.36.0
+pip install sentence-transformers==2.3.1
+
+
+# https://ffmpeg.org/download.html
+
+
+# Install required libraries
+
+mysql-connector-python pymysql python-dotenv tqdm numpy pandas sentence-transformers geopy faiss-cpu weasyprint flask_cors flask pandas jinja2
+
+
+
+
+
+
+
+NEW
+docker run --name mariadb-11.7 -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_DATABASE=properties_db -p 3306:3306 -d mariadb:11.7-rc
+
+docker run --name mariadb11 -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_DATABASE=property_db -p 3306:3306 -d mariadb:11.7-rc
+
+
+
+
+###WORKING
+docker run --name maria-vector -p 3306:3306 -e MARIADB_ROOT_PASSWORD=vectorpass -e MARIADB_DATABASE=property_db -e MARIADB_USER=vectoradmin -e MARIADB_PASSWORD=vectorpass -d mariadb:11.7-rc
+
+
+
+docker run --name my-mariadb -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 -d mariadb:10.5
+
+
+%%bash
+docker run --name maria-vector -e MYSQL_ROOT_PASSWORD=vectorpass -e MYSQL_DATABASE=property_db -p 3306:3306 -d mariadb:11.7-rc
+
+
+
+flask flask-cors transformers soundfile numpytorch
+
+docker exec -it my-mariadb mariadb -u sakib -p
+
+
+
+
+CREATE USER 'sakib'@'localhost' IDENTIFIED BY '1234';	
+GRANT ALL PRIVILEGES ON SAMPLE.* TO 'sakib'@'localhost';
+FLUSH PRIVILEGES;
+
+SHOW GRANTS FOR 'sakib'@'localhost';

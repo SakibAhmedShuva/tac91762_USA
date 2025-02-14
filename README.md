@@ -10,7 +10,7 @@ http://localhost:5000/api
 ## Authentication
 Currently, no authentication is required.
  
-# Environment Variables Documentation (.env)
+## Environment Variables (.env)
 
 ## Database Configuration
 

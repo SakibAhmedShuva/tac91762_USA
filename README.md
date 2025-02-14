@@ -1,6 +1,6 @@
 # API Documentation
 
-Python 3.10.11 preferred
+Python 3.10.11 is preferred. Please use "postman_collection.json".
 
 ## Base URL
 ```

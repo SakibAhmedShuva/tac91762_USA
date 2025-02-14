@@ -1,5 +1,7 @@
 # API Documentation
 
+Python 3.10.11 preferred
+
 ## Base URL
 ```
 http://localhost:5000/api
